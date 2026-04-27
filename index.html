@@ -1,0 +1,2436 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Profils thématiques — Maquette commerciale v3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500;600;700&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#00753b;
+  --green-mid:#759C60;
+  --green-light:#96bf9a;
+  --green-pale:#ecf2eb;
+  --green-paler:#f4fae8;
+  --green-deep:#005644;
+  --red:#EE2528;
+  --orange:#f07322;
+  --salmon:#EFDBD2;
+  --violet-vie:#5c368d;
+  --violet-vie-pale:#eeeaf3;
+  --ink:#231F20;
+  --ink-soft:#454545;
+  --ink-light:#6E6E6E;
+  --line:#D4D4D4;
+  --cream:#FAFAF8;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html, body{
+  background:#E5E2DD;
+  font-family:'Lato',sans-serif;
+  color:var(--ink-soft);
+  font-size:9.5pt;
+  line-height:1.55;
+}
+
+body{padding:30px 0;}
+
+.page{
+  width:210mm;
+  height:297mm;
+  background:white;
+  margin:0 auto 20px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 8px 32px rgba(0,0,0,0.08);
+  page-break-after:always;
+}
+
+@media print{
+  body{padding:0;background:white;}
+  .page{margin:0;box-shadow:none;}
+  @page{size:A4 portrait;margin:0;}
+}
+
+.display{font-family:'Josefin Sans',sans-serif;}
+.script{font-family:'Caveat',cursive;}
+
+/* ============== LOGO ITHÉA via currentColor ============== */
+.ithea-logo{
+  display:inline-block;
+  vertical-align:middle;
+}
+.ithea-logo svg{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* ============== PAGE 1 — COUVERTURE ============== */
+
+.p1{
+  background:white;
+  display:grid;
+  grid-template-rows:80mm 1fr 65mm;
+}
+
+.p1-top{
+  background:var(--green);
+  padding:14mm 18mm 12mm;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:6mm;
+}
+
+.p1-top-tags{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.p1-top-tag{
+  font-size:8pt;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.85);
+  font-weight:300;
+}
+
+.p1-top-edition{
+  background:rgba(255,255,255,0.18);
+  padding:2mm 6mm;
+  border-radius:30px;
+  font-size:8.5pt;
+  color:white;
+  font-weight:400;
+  letter-spacing:0.04em;
+}
+
+.p1-display{
+  font-family:'Josefin Sans',sans-serif;
+  font-weight:200;
+  font-size:42pt;
+  line-height:0.95;
+  color:white;
+  letter-spacing:-0.01em;
+  margin:0;
+}
+.p1-display strong{font-weight:500;}
+
+.p1-mid{
+  background:white;
+  position:relative;
+  padding:14mm 18mm;
+  display:flex;
+  align-items:center;
+}
+
+.p1-card{
+  width:100%;
+  background:white;
+  border:1px solid var(--green);
+  position:relative;
+  aspect-ratio:1.45;
+  display:flex;
+}
+
+.p1-card-overlay{
+  position:absolute;
+  top:0;
+  right:0;
+  width:55%;
+  height:100%;
+  background:var(--green-pale);
+  z-index:1;
+}
+
+.p1-card-tag{
+  position:absolute;
+  bottom:8mm;
+  left:0;
+  background:var(--green);
+  color:white;
+  padding:3mm 7mm;
+  font-size:9pt;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  font-weight:600;
+  z-index:3;
+}
+
+.p1-card svg.p1-territoire{
+  position:relative;
+  z-index:2;
+  width:100%;
+  height:100%;
+}
+
+.p1-bot{
+  background:white;
+  padding:0 18mm 14mm;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+}
+
+.p1-baseline{
+  font-family:'Josefin Sans',sans-serif;
+  font-weight:300;
+  font-size:14pt;
+  color:var(--green);
+  margin-bottom:8mm;
+  letter-spacing:0.01em;
+}
+
+.p1-foot{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  padding-top:6mm;
+  border-top:1px solid var(--green);
+}
+
+.p1-amorce{
+  font-size:9pt;
+  font-style:italic;
+  max-width:115mm;
+  line-height:1.45;
+  color:var(--ink-soft);
+}
+
+.p1-logo-wrap{
+  width:34mm;
+  color:var(--ink);
+}
+
+/* ============== PAGE 2 — MANIFESTE + ÉDITO ============== */
+
+.p2{
+  background:white;
+  padding:18mm;
+  display:flex;
+  flex-direction:column;
+}
+
+.p2-headtag{
+  font-size:8pt;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--green);
+  font-weight:600;
+  margin-bottom:5mm;
+}
+
+.p2-title-row{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:8mm;
+  align-items:end;
+  margin-bottom:8mm;
+}
+
+.p2-mark{
+  font-family:'Caveat',cursive;
+  font-size:60pt;
+  color:var(--green);
+  line-height:0.85;
+  font-weight:500;
+  letter-spacing:-0.02em;
+}
+
+.p2-mark-line{
+  border-bottom:2px solid var(--green);
+  height:0;
+  margin-bottom:6mm;
+}
+
+.p2-edito-text{
+  font-size:9.5pt;
+  line-height:1.65;
+  color:var(--ink-soft);
+  border:1.5px solid var(--green);
+  padding:7mm 8mm;
+  margin-bottom:7mm;
+  position:relative;
+}
+
+.p2-edito-text p{margin-bottom:3mm;}
+.p2-edito-text p:last-of-type{margin-bottom:0;}
+.p2-edito-text strong{color:var(--ink);font-weight:700;}
+.p2-edito-text em{font-style:italic;color:var(--green-deep);}
+
+.p2-edito-sig{
+  margin-top:5mm;
+  padding-top:4mm;
+  border-top:1px solid var(--green-pale);
+  display:grid;
+  grid-template-columns:14mm 1fr;
+  gap:4mm;
+  align-items:center;
+}
+
+.p2-edito-photo{
+  width:14mm;
+  height:14mm;
+  border-radius:50%;
+  background:radial-gradient(circle at 30% 30%, var(--green-light) 0%, var(--green) 70%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-family:'Josefin Sans',sans-serif;
+  font-size:11pt;
+  font-weight:600;
+}
+
+.p2-edito-sig-text{
+  font-size:8.5pt;
+  line-height:1.45;
+}
+.p2-edito-sig-name{
+  font-family:'Josefin Sans',sans-serif;
+  font-weight:600;
+  font-size:10pt;
+  color:var(--ink);
+}
+.p2-edito-sig-role{
+  color:var(--green);
+  font-weight:600;
+  font-size:8pt;
+  letter-spacing:0.04em;
+}
+.p2-edito-sig-contact{color:var(--ink-light);font-size:8pt;}
+
+.p2-manifeste-h{
+  font-size:8pt;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--green);
+  font-weight:700;
+  margin-bottom:4mm;
+  padding-bottom:2mm;
+  border-bottom:1px solid var(--green);
+}
+
+.p2-titre{
+  font-family:'Josefin Sans',sans-serif;
+  font-weight:300;
+  font-size:22pt;
+  line-height:1.1;
+  color:var(--ink);
+  margin-bottom:6mm;
+  letter-spacing:-0.01em;
+}
+.p2-titre strong{color:var(--green);font-weight:500;}
+.p2-titre em{font-style:italic;font-weight:300;}
+
+.p2-blocks{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:5mm;
+  margin-top:auto;
+}
+
+.p2-block{
+  background:var(--green-pale);
+  padding:5mm;
+  position:relative;
+}
+
+.p2-block-num{
+  font-family:'Josefin Sans',sans-serif;
+  font-weight:300;
+  font-size:24pt;
+  color:var(--green);
+  line-height:0.85;
+  margin-bottom:2mm;
+}
+
+.p2-block-titre{
+  font-family:'Josefin Sans',sans-serif;
+  font-size:11pt;
+  font-weight:600;
+  color:var(--ink);
+  margin-bottom:2mm;
+  letter-spacing:-0.005em;
+}
+
+.p2-block-corps{
+  font-size:8.5pt;
+  line-height:1.5;
+  color:var(--ink-soft);
+}
+.p2-block-corps em{color:var(--green-deep);font-style:italic;}
+.p2-block-corps strong{color:var(--ink);font-weight:700;}
+
+/* ============== PAGES 3-4 — LA NOTE ============== */
+
+.note{
+  padding:0;
+  display:flex;
+  flex-direction:column;
+}
+
+.note-bandeau{
+  background:var(--violet-vie);
+  color:white;
+  padding:8mm 16mm;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.note-bandeau-left{
+  display:flex;
+  align-items:center;
+  gap:5mm;
+}
+
+.note-bandeau-tag{
+  font-size:7.5pt;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  font-weight:400;
+  opacity:0.85;
+}
+
+.note-bandeau-thematique{
+  font-family:'Josefin Sans',sans-serif;
+  font-size:14pt;
+  font-weight:500;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+}
+
+.note-bandeau-meta{
+  font-size:8pt;
+  letter-spacing:0.04em;
+  opacity:0.85;
+}
+
+.note-content{
+  padding:10mm 16mm 12mm;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+}
+
+.note-eyebrow{
+  font-size:7.5pt;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--violet-vie);
+  font-weight:600;
+  margin-bottom:4mm;
+}
+
+.note-titre{
+  font-family:'Josefin Sans',sans-serif;
+  font-size:24pt;
+  line-height:1.1;
+  font-weight:300;
+  letter-spacing:-0.015em;
+  color:var(--ink);
+  margin-bottom:5mm;
+  max-width:160mm;
+}
+.note-titre strong{font-weight:500;color:var(--violet-vie);}
+
+.note-chapeau{
+  font-size:10pt;
+  line-height:1.55;
+  color:var(--ink-soft);
+  border-left:2px solid var(--violet-vie);
+  padding-left:5mm;
+  margin-bottom:8mm;
+  max-width:170mm;
+}
+
+.note-chapeau-sig{
+  display:block;
+  margin-top:2mm;
+  font-size:8pt;
+  font-style:italic;
+  color:var(--violet-vie);
+  font-weight:600;
+  letter-spacing:0.04em;
+}
+
+.note-grid{
+  display:grid;
+  grid-template-columns:1fr 65mm;
+  gap:8mm;
+  margin-bottom:8mm;
+}
+
+.note-viz{
+  background:var(--violet-vie-pale);
+  padding:6mm;
+}
+
+.note-viz-titre{
+  font-family:'Josefin Sans',sans-serif;
+  font-size:11pt;
+  font-weight:600;
+  color:var(--ink);
+  margin-bottom:1mm;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+}
+
+.note-viz-source{
+  font-size:7pt;
+  color:var(--ink-light);
+  font-style:italic;
+  margin-bottom:4mm;
+}
+
+.note-viz-legende{
+  margin-top:4mm;
+  padding-top:4mm;
+  border-top:1px dashed var(--violet-vie);
+  font-size:8.5pt;
+  font-style:italic;
+  color:var(--ink-soft);
+  line-height:1.45;
+}
+
+.note-chiffres{
+  display:flex;
+  flex-direction:column;
+  gap:5mm;
+}
+
+.note-chiffre{
+  background:white;
+  padding:5mm;
+  border:1px solid var(--violet-vie-pale);
+  border-left:3px solid var(--violet-vie);
+}
+
+.note-chiffre-val{
+  font-family:'Josefin Sans',sans-serif;
+  font-size:26pt;
+  font-weight:300;
+  color:var(--violet-vie);
+  line-height:1;
+  margin-bottom:1mm;
+  letter-spacing:-0.02em;
+}
+
+.note-chiffre-lab{
+  font-size:8pt;
+  color:var(--ink-soft);
+  line-height:1.4;
+}
+.note-chiffre-lab strong{color:var(--ink);font-weight:700;}
+
+.note-retenir{
+  background:var(--violet-vie);
+  color:white;
+  padding:6mm 7mm;
+}
+
+.note-retenir-titre{
+  font-family:'Josefin Sans',sans-serif;
+  font-size:11pt;
+  font-weight:600;
+  margin-bottom:3mm;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+}
+
+.note-retenir ul{
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:2mm;
+}
+
+.note-retenir li{
+  font-size:9pt;
+  line-height:1.45;
+  padding-left:5mm;
+  position:relative;
+  color:rgba(255,255,255,0.94);
+}
+.note-retenir li::before{
+  content:"→";
+  position:absolute;
+  left:0;
+  font-weight:700;
+}
+
+/* Page 4 — verso de la note */
+
+.note-section{margin-bottom:7mm;}
+
+.note-section-h{
+  font-family:'Josefin Sans',sans-serif;
+  font-size:13pt;
+  font-weight:600;
+  color:var(--ink);
+  margin-bottom:3mm;
+  display:flex;
+  align-items:center;
+  gap:4mm;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+}
+.note-section-h::before{
+  content:"";
+  width:8mm;
+  height:2px;
+  background:var(--violet-vie);
+  flex-shrink:0;
+}
+
+.note-comparatif{
+  display:grid;
+  grid-template-columns:1fr 70mm;
+  gap:6mm;
+  background:var(--violet-vie-pale);
+  padding:5mm;
+}
+
+.note-comparatif-text{
+  font-size:8.5pt;
+  line-height:1.5;
+  color:var(--ink-soft);
+}
+.note-comparatif-text strong{color:var(--ink);}
+
+.note-evol{
+  background:var(--violet-vie-pale);
+  padding:5mm;
+}
+
+.note-evol-text{
+  font-size:8.5pt;
+  font-style:italic;
+  color:var(--ink-soft);
+  margin-top:3mm;
+  padding-top:3mm;
+  border-top:1px dashed var(--violet-vie);
+}
+
+.note-surveiller{
+  background:white;
+  padding:6mm;
+  border:1px solid var(--violet-vie-pale);
+}
+
+.note-surv-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:5mm 7mm;
+}
+
+.note-surv-item{
+  display:grid;
+  grid-template-columns:9mm 1fr;
+  gap:3mm;
+  align-items:start;
+}
+
+.note-surv-icon{
+  width:9mm;
+  height:9mm;
+  background:var(--violet-vie);
+  color:white;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:'Josefin Sans',sans-serif;
+  font-weight:600;
+  font-size:11pt;
+  flex-shrink:0;
+}
+
+.note-surv-titre{
+  font-size:9pt;
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:0.5mm;
+  line-height:1.2;
+}
+.note-surv-text{
+  font-size:8pt;
+  color:var(--ink-light);
+  line-height:1.4;
+}
+
+.note-pied{
+  margin-top:auto;
+  background:var(--violet-vie);
+  color:white;
+  padding:6mm 16mm;
+  display:grid;
+  grid-template-columns:14mm 1fr 60mm;
+  gap:5mm;
+  align-items:center;
+}
+
+.note-pied-photo{
+  width:14mm;
+  height:14mm;
+  border-radius:50%;
+  background:var(--violet-vie-pale);
+  color:var(--violet-vie);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:'Josefin Sans',sans-serif;
+  font-size:11pt;
+  font-weight:600;
+}
+
+.note-pied-cta{
+  font-size:8.5pt;
+  line-height:1.4;
+}
+.note-pied-cta strong{
+  font-family:'Josefin Sans',sans-serif;
+  font-size:11pt;
+  font-weight:600;
+  display:block;
+  margin-bottom:1mm;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+}
+
+.note-pied-contact{
+  font-size:7.5pt;
+  line-height:1.45;
+  text-align:right;
+  color:rgba(255,255,255,0.88);
+}
+.note-pied-contact strong{display:block;color:white;font-size:9pt;font-weight:700;margin-bottom:1mm;}
+
+/* ============== PAGES 5-6 — DOSSIER ============== */
+
+.doss{
+  padding:0;
+  display:flex;
+  flex-direction:column;
+}
+
+.doss-bandeau{
+  border-bottom:1px solid var(--violet-vie);
+  padding:8mm 16mm 5mm;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+}
+
+.doss-bandeau-left{
+  font-size:7.5pt;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--ink-light);
+  font-weight:600;
+}
+.doss-bandeau-left strong{color:var(--violet-vie);}
+
+.doss-bandeau-page{
+  font-family:'Josefin Sans',sans-serif;
+  font-size:11pt;
+  font-style:italic;
+  color:var(--ink-light);
+}
+
+.doss-content{
+  padding:6mm 16mm;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+}
+
+.doss-eyebrow{
+  font-size:7.5pt;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--violet-vie);
+  font-weight:600;
+  margin-bottom:3mm;
+}
+
+.doss-titre{
+  font-family:'Josefin Sans',sans-serif;
+  font-size:18pt;
+  line-height:1.1;
+  font-weight:300;
+  color:var(--ink);
+  margin-bottom:4mm;
+  letter-spacing:-0.015em;
+}
+.doss-titre strong{font-weight:500;color:var(--violet-vie);}
+
+.doss-intro{
+  font-size:9pt;
+  line-height:1.55;
+  color:var(--ink-soft);
+  margin-bottom:5mm;
+  max-width:170mm;
+}
+
+.doss-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6mm;
+  margin-bottom:6mm;
+}
+
+.doss-card{
+  background:var(--violet-vie-pale);
+  padding:5mm;
+  border-top:2px solid var(--violet-vie);
+}
+
+.doss-card-titre{
+  font-family:'Josefin Sans',sans-serif;
+  font-size:10pt;
+  font-weight:600;
+  color:var(--ink);
+  margin-bottom:1mm;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+}
+.doss-card-source{
+  font-size:7pt;
+  color:var(--ink-light);
+  font-style:italic;
+  margin-bottom:3mm;
+}
+
+.doss-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:8.5pt;
+}
+.doss-table th{
+  text-align:left;
+  font-weight:700;
+  color:var(--violet-vie);
+  padding:2mm 3mm 2mm 0;
+  border-bottom:1px solid var(--violet-vie);
+  font-size:7.5pt;
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+}
+.doss-table td{
+  padding:1.8mm 3mm 1.8mm 0;
+  border-bottom:1px solid rgba(92,54,141,0.15);
+}
+.doss-table tr:last-child td{border-bottom:none;}
+.doss-table .focus{font-weight:700;color:var(--violet-vie);}
+
+.doss-method{
+  background:white;
+  padding:4mm;
+  border:1px solid var(--violet-vie-pale);
+  border-left:3px solid var(--violet-vie);
+  margin-bottom:4mm;
+}
+
+.doss-method-titre{
+  font-size:7pt;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:var(--violet-vie);
+  font-weight:700;
+  margin-bottom:2mm;
+}
+
+.doss-method-corps{
+  font-size:8pt;
+  line-height:1.5;
+  color:var(--ink-soft);
+}
+.doss-method-corps strong{color:var(--ink);}
+
+.doss-keynumbers{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:5mm;
+  margin-bottom:6mm;
+}
+
+.doss-key{
+  text-align:center;
+  padding:5mm 3mm;
+  background:white;
+  border:1px solid var(--violet-vie-pale);
+}
+
+.doss-key-val{
+  font-family:'Josefin Sans',sans-serif;
+  font-size:24pt;
+  font-weight:300;
+  color:var(--violet-vie);
+  line-height:1;
+  margin-bottom:2mm;
+  letter-spacing:-0.02em;
+}
+.doss-key-lab{
+  font-size:7.5pt;
+  color:var(--ink-light);
+  line-height:1.4;
+}
+
+.doss-carte{
+  background:var(--violet-vie-pale);
+  padding:4mm;
+  margin-bottom:4mm;
+}
+
+.doss-carte-svg{
+  width:100%;
+  aspect-ratio:1.6;
+  background:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:3mm;
+}
+
+.doss-legende{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:3mm;
+  font-size:7.5pt;
+}
+
+.doss-leg-item{
+  display:flex;
+  align-items:center;
+  gap:2mm;
+  color:var(--ink-soft);
+}
+
+.doss-leg-color{
+  width:5mm;
+  height:3mm;
+  flex-shrink:0;
+}
+
+.doss-encart{
+  background:var(--violet-vie);
+  color:white;
+  padding:5mm;
+}
+
+.doss-encart-titre{
+  font-family:'Josefin Sans',sans-serif;
+  font-size:10.5pt;
+  font-weight:600;
+  margin-bottom:2mm;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+}
+
+.doss-encart-corps{
+  font-size:8.5pt;
+  line-height:1.5;
+  color:rgba(255,255,255,0.94);
+}
+.doss-encart-corps strong{color:white;}
+.doss-encart-corps em{color:rgba(255,255,255,0.85);font-style:italic;}
+
+.doss-pied{
+  margin-top:auto;
+  border-top:1px solid var(--line);
+  padding:5mm 16mm;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:7.5pt;
+  color:var(--ink-light);
+}
+
+.doss-pied strong{color:var(--violet-vie);}
+
+/* ============== PAGE 7 — ABONNEMENT COMPLET ============== */
+
+.p7{
+  padding:14mm 16mm 12mm;
+  display:flex;
+  flex-direction:column;
+  background:white;
+}
+
+.p7-titre{
+  font-family:'Josefin Sans',sans-serif;
+  font-size:24pt;
+  line-height:1.05;
+  font-weight:300;
+  letter-spacing:-0.02em;
+  color:var(--ink);
+  margin-bottom:2mm;
+}
+.p7-titre strong{font-weight:500;color:var(--green);}
+
+.p7-soustitre{
+  font-size:9.5pt;
+  color:var(--ink-light);
+  margin-bottom:7mm;
+  max-width:170mm;
+  line-height:1.5;
+}
+
+/* Actifs — valorisés en haut */
+.p7-actifs{
+  background:var(--green-pale);
+  padding:7mm 7mm 6mm;
+  margin-bottom:6mm;
+  border-left:3px solid var(--green);
+}
+
+.p7-actifs-h{
+  font-family:'Josefin Sans',sans-serif;
+  font-size:13pt;
+  font-weight:500;
+  color:var(--green);
+  margin-bottom:5mm;
+  letter-spacing:-0.005em;
+}
+.p7-actifs-h strong{font-weight:600;color:var(--ink);}
+
+.p7-actifs-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:5mm;
+}
+
+.p7-actif{
+  display:flex;
+  flex-direction:column;
+  gap:2mm;
+}
+
+.p7-actif-icon{
+  width:11mm;
+  height:11mm;
+  background:var(--green);
+  color:white;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:'Josefin Sans',sans-serif;
+  font-size:13pt;
+  font-weight:500;
+  flex-shrink:0;
+  margin-bottom:1mm;
+}
+
+.p7-actif-titre{
+  font-family:'Josefin Sans',sans-serif;
+  font-size:10.5pt;
+  font-weight:600;
+  color:var(--ink);
+  margin-bottom:1mm;
+  letter-spacing:-0.005em;
+  line-height:1.2;
+}
+.p7-actif-text{
+  font-size:8pt;
+  line-height:1.45;
+  color:var(--ink-soft);
+}
+
+/* Section : 12 thématiques compacte */
+.p7-themes{margin-bottom:6mm;}
+
+.p7-section-h{
+  font-size:7.5pt;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--green);
+  font-weight:700;
+  margin-bottom:3mm;
+  padding-bottom:1.5mm;
+  border-bottom:1px solid var(--green);
+}
+
+.p7-themes-grid{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:1.5mm;
+}
+
+.p7-theme{
+  background:var(--green-pale);
+  padding:2.5mm 2mm;
+  font-size:7.5pt;
+  font-weight:600;
+  color:var(--ink);
+  text-align:center;
+  line-height:1.15;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:10mm;
+}
+
+.p7-theme.featured{
+  background:var(--green);
+  color:white;
+}
+
+/* Formules */
+.p7-formules{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:5mm;
+  margin-bottom:6mm;
+}
+
+.p7-formule{
+  background:white;
+  border:1px solid var(--green-pale);
+  padding:5mm;
+  position:relative;
+}
+
+.p7-formule.high{
+  border-color:var(--green);
+  border-width:2px;
+  background:var(--green-pale);
+}
+
+.p7-formule-tag{
+  position:absolute;
+  top:-3mm;
+  right:5mm;
+  background:var(--green);
+  color:white;
+  padding:1.5mm 4mm;
+  font-size:7pt;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  font-weight:700;
+}
+
+.p7-formule-h{
+  font-family:'Josefin Sans',sans-serif;
+  font-size:13pt;
+  font-weight:600;
+  color:var(--ink);
+  margin-bottom:1mm;
+  letter-spacing:-0.01em;
+}
+
+.p7-formule-sub{
+  font-size:8pt;
+  color:var(--ink-light);
+  margin-bottom:2mm;
+  font-style:italic;
+}
+
+.p7-formule-prix{
+  font-family:'Josefin Sans',sans-serif;
+  font-size:16pt;
+  font-weight:300;
+  color:var(--green);
+  margin-bottom:3mm;
+  line-height:1;
+  letter-spacing:-0.02em;
+}
+.p7-formule-prix span{
+  font-size:8.5pt;
+  color:var(--ink-light);
+  font-weight:400;
+  font-style:italic;
+}
+
+.p7-formule ul{
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:1.5mm;
+}
+
+.p7-formule li{
+  font-size:7.5pt;
+  line-height:1.4;
+  padding-left:5mm;
+  position:relative;
+  color:var(--ink-soft);
+}
+
+.p7-formule li::before{
+  content:"✓";
+  position:absolute;
+  left:0;
+  color:var(--green);
+  font-weight:700;
+  font-size:9pt;
+  line-height:1;
+  top:0.5mm;
+}
+
+/* À propos — bandeau pied compact */
+.p7-apropos{
+  margin-top:auto;
+  padding-top:5mm;
+  border-top:1px solid var(--green-pale);
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:8mm;
+  align-items:center;
+}
+
+.p7-apropos-text{
+  font-size:8pt;
+  line-height:1.5;
+  color:var(--ink-soft);
+}
+.p7-apropos-text strong{
+  color:var(--green);
+  font-weight:700;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  font-size:7.5pt;
+  display:block;
+  margin-bottom:1mm;
+}
+
+.p7-apropos-stats{
+  display:flex;
+  gap:6mm;
+  align-items:center;
+  border-left:1px solid var(--green-pale);
+  padding-left:6mm;
+}
+
+.p7-apropos-stat{
+  text-align:center;
+}
+
+.p7-apropos-stat-val{
+  font-family:'Josefin Sans',sans-serif;
+  font-size:14pt;
+  font-weight:300;
+  color:var(--green);
+  line-height:1;
+  letter-spacing:-0.02em;
+  margin-bottom:1mm;
+}
+
+.p7-apropos-stat-lab{
+  font-size:6.5pt;
+  color:var(--ink-light);
+  line-height:1.2;
+  text-transform:uppercase;
+  letter-spacing:0.04em;
+}
+
+/* ============== PAGE 8 — BON DE COMMANDE ============== */
+
+.p8{
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  background:white;
+}
+
+.p8-bandeau{
+  background:var(--green);
+  color:white;
+  padding:10mm 16mm;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.p8-bandeau-titre{
+  font-family:'Josefin Sans',sans-serif;
+  font-size:22pt;
+  font-weight:300;
+  letter-spacing:-0.01em;
+}
+.p8-bandeau-titre strong{font-weight:500;}
+
+.p8-bandeau-ter{
+  font-family:'Josefin Sans',sans-serif;
+  font-size:14pt;
+  font-weight:300;
+  background:rgba(255,255,255,0.18);
+  padding:2mm 6mm;
+  border-radius:30px;
+}
+
+.p8-content{
+  padding:7mm 16mm;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  gap:5mm;
+}
+
+.p8-block{
+  border-bottom:1px solid var(--green-pale);
+  padding-bottom:5mm;
+}
+.p8-block:last-of-type{border-bottom:none;}
+
+.p8-block-h{
+  font-size:8pt;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--green);
+  font-weight:700;
+  margin-bottom:3mm;
+}
+
+.p8-fields{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:3mm 6mm;
+}
+
+.p8-field{
+  font-size:8.5pt;
+  color:var(--ink-light);
+  border-bottom:1px dotted var(--ink-light);
+  padding-bottom:2mm;
+}
+.p8-field em{font-style:italic;}
+
+.p8-themes-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2mm 5mm;
+  font-size:8.5pt;
+}
+
+.p8-theme-item{
+  display:flex;
+  align-items:center;
+  gap:2.5mm;
+  color:var(--ink-soft);
+}
+
+.p8-checkbox{
+  width:3.5mm;
+  height:3.5mm;
+  border:1px solid var(--ink-light);
+  flex-shrink:0;
+}
+
+.p8-totaux{
+  display:grid;
+  grid-template-columns:1fr 28mm 28mm;
+  border:1px solid var(--green-pale);
+  font-size:8.5pt;
+  margin-top:3mm;
+}
+
+.p8-totaux > div{
+  padding:2.5mm 4mm;
+  border-right:1px solid var(--green-pale);
+  border-bottom:1px solid var(--green-pale);
+}
+.p8-totaux > div:nth-child(3n){border-right:none;}
+.p8-totaux > div:nth-child(n+4){border-bottom:none;}
+.p8-totaux .head{
+  background:var(--green-pale);
+  font-weight:700;
+  color:var(--green);
+  font-size:7.5pt;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+}
+
+.p8-compare-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:8.5pt;
+  margin-top:2mm;
+}
+.p8-compare-table td{
+  padding:2mm 3mm;
+  border-bottom:1px solid var(--green-pale);
+}
+.p8-compare-table td:first-child{
+  background:var(--green-pale);
+  font-weight:600;
+  color:var(--green);
+  width:24mm;
+}
+
+.p8-paiement{
+  display:grid;
+  grid-template-columns:1fr 60mm;
+  gap:6mm;
+  align-items:start;
+}
+
+.p8-paiement-text{
+  font-size:8.5pt;
+  line-height:1.5;
+  color:var(--ink-soft);
+}
+.p8-paiement-text strong{display:block;color:var(--ink);margin-bottom:1mm;font-size:9pt;}
+
+.p8-signature{
+  border:1px solid var(--ink-light);
+  height:30mm;
+  padding:2mm;
+  font-size:7pt;
+  color:var(--ink-light);
+  font-style:italic;
+}
+
+/* ============== PAGE 9 — 4ème de couv ============== */
+
+.p9{
+  background:var(--green);
+  color:white;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  position:relative;
+}
+
+.p9-tag{
+  padding:14mm 18mm 0;
+  font-size:8pt;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.7);
+  font-weight:300;
+}
+
+.p9-content{
+  padding:14mm 18mm 0;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+}
+
+.p9-display{
+  font-family:'Josefin Sans',sans-serif;
+  font-weight:200;
+  font-size:42pt;
+  line-height:0.95;
+  color:white;
+  letter-spacing:-0.01em;
+  margin-bottom:6mm;
+}
+.p9-display strong{font-weight:500;}
+
+.p9-baseline{
+  font-family:'Josefin Sans',sans-serif;
+  font-weight:300;
+  font-size:13pt;
+  color:rgba(255,255,255,0.9);
+  margin-bottom:10mm;
+  max-width:130mm;
+  letter-spacing:0.01em;
+}
+
+.p9-apropos{
+  background:rgba(255,255,255,0.08);
+  padding:7mm;
+  margin-bottom:6mm;
+  border-left:3px solid white;
+}
+
+.p9-apropos-h{
+  font-family:'Josefin Sans',sans-serif;
+  font-size:9pt;
+  font-weight:600;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  margin-bottom:3mm;
+  color:rgba(255,255,255,0.85);
+}
+
+.p9-apropos-text{
+  font-size:9pt;
+  line-height:1.55;
+  color:rgba(255,255,255,0.95);
+  margin-bottom:5mm;
+}
+.p9-apropos-text strong{color:white;font-weight:700;}
+
+.p9-stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:4mm;
+  margin-bottom:5mm;
+  padding-bottom:5mm;
+  border-bottom:1px solid rgba(255,255,255,0.2);
+}
+
+.p9-stat{
+  display:flex;
+  flex-direction:column;
+  gap:1mm;
+}
+
+.p9-stat-val{
+  font-family:'Josefin Sans',sans-serif;
+  font-size:24pt;
+  font-weight:300;
+  color:white;
+  line-height:1;
+  letter-spacing:-0.02em;
+}
+.p9-stat-lab{
+  font-size:7.5pt;
+  color:rgba(255,255,255,0.85);
+  line-height:1.3;
+}
+
+.p9-antennes{
+  font-size:8pt;
+  color:rgba(255,255,255,0.85);
+  line-height:1.5;
+}
+.p9-antennes strong{
+  display:block;
+  font-size:7.5pt;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:white;
+  margin-bottom:1mm;
+  font-weight:700;
+}
+
+.p9-cta{
+  background:white;
+  color:var(--green);
+  padding:7mm;
+  display:grid;
+  grid-template-columns:1fr 22mm;
+  gap:6mm;
+  align-items:center;
+  margin-bottom:0;
+}
+
+.p9-cta-text{
+  font-size:9pt;
+  line-height:1.5;
+  color:var(--ink-soft);
+}
+.p9-cta-text strong{
+  display:block;
+  font-family:'Josefin Sans',sans-serif;
+  font-size:13pt;
+  color:var(--green);
+  font-weight:600;
+  margin-bottom:1mm;
+  letter-spacing:0.01em;
+}
+
+.p9-qr{
+  width:22mm;
+  height:22mm;
+  background:white;
+  border:1px solid var(--green-pale);
+}
+
+.p9-bot{
+  border-top:1px solid rgba(255,255,255,0.3);
+  padding:8mm 18mm 14mm;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  margin-top:auto;
+}
+
+.p9-coords{
+  font-size:8.5pt;
+  line-height:1.5;
+  color:rgba(255,255,255,0.85);
+}
+.p9-coords strong{color:white;display:block;font-weight:700;margin-bottom:1mm;}
+
+.p9-logo-wrap{
+  width:54mm;
+  color:white;
+}
+
+/* Markers visuels pour aider à voir les variables */
+.var{
+  background:rgba(0,117,59,0.1);
+  border-bottom:1px dashed rgba(0,117,59,0.5);
+  padding:0 2px;
+  font-style:italic;
+  color:var(--green);
+}
+
+.note .var, .doss .var{
+  background:rgba(92,54,141,0.1);
+  border-bottom:1px dashed rgba(92,54,141,0.5);
+  color:var(--violet-vie);
+}
+
+.p9 .var, .p8-bandeau .var, .p1-top .var{
+  background:rgba(255,255,255,0.18);
+  border-bottom:1px dashed rgba(255,255,255,0.6);
+  color:white;
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================== -->
+<!-- LOGO ITHÉA — symbol SVG officiel via currentColor -->
+<!-- ============================================================== -->
+<svg width="0" height="0" style="position:absolute;">
+  <defs>
+    <clipPath id="ithea-clip-1">
+      <polygon points="54.77 54.91 73.91 74.3 92.9 36.38 54.77 54.91"/>
+    </clipPath>
+    <clipPath id="ithea-clip-2">
+      <polygon points="73.09 74.12 54.87 55.71 36.8 91.73 73.09 74.12"/>
+    </clipPath>
+    <symbol id="ithea-logo" viewBox="0 0 402.33 156.25">
+      <g clip-path="url(#ithea-clip-1)">
+        <rect x="51.15" y="32.73" width="45.37" height="45.21" transform="translate(-10.14 17.1) rotate(-12.37)" fill="currentColor"/>
+      </g>
+      <path fill="currentColor" d="m151.27,130.12c0-.69.59-1.28,1.31-1.28s1.31.59,1.31,1.28-.59,1.31-1.31,1.31-1.31-.59-1.31-1.31m.49,5.28h1.64v16.39h-1.64v-16.39Z"/>
+      <path fill="currentColor" d="m163.6,137v10.66c0,2.88,1.54,2.95,4.89,2.65v1.48c-4.3.66-6.56-.39-6.56-4.13v-10.66h-3.61v-1.61h3.61v-4.1l1.67-.49v4.59h4.89v1.61h-4.89Z"/>
+      <path fill="currentColor" d="m187.93,141.59v10.2h-1.67v-10.2c0-3.02-1.74-4.98-4.82-4.98s-5.74,2.1-5.74,6.53v8.66h-1.64v-22.95h1.64v9.67c1.25-2.43,3.34-3.47,5.87-3.47,3.9,0,6.36,2.59,6.36,6.56"/>
+      <path fill="currentColor" d="m209.67,143.66c0,.26-.03.53-.03.79h-14.85c.39,3.7,3.21,6.13,6.95,6.13,2.69,0,4.72-1.25,5.67-2.98l1.44.85c-1.34,2.23-3.9,3.71-7.15,3.71-5.05,0-8.62-3.61-8.62-8.56s3.48-8.56,8.49-8.56,8.1,4.13,8.1,8.62m-14.89-.82h13.18c-.36-4-3.18-6.23-6.39-6.23-3.74,0-6.46,2.59-6.79,6.23"/>
+      <path fill="currentColor" d="m231.25,135.4v16.4h-1.67v-3.71c-1.38,2.46-3.9,4.07-7.05,4.07-4.66,0-8.49-3.71-8.49-8.56s3.84-8.56,8.49-8.56c3.15,0,5.67,1.61,7.05,4.07v-3.71h1.67Zm-1.67,8.2c0-3.9-3.02-6.98-6.92-6.98s-6.95,3.08-6.95,6.98,3.05,6.98,6.95,6.98,6.92-3.08,6.92-6.98"/>
+      <rect fill="currentColor" x="238.27" y="142.87" width="11.8" height="1.57"/>
+      <path fill="currentColor" d="m255.95,143.59c0-4.85,3.67-8.56,8.62-8.56,3.21,0,5.97,1.64,7.15,4.2l-1.34.79c-.95-2.07-3.18-3.41-5.8-3.41-3.97,0-6.95,3.08-6.95,6.98s2.98,6.98,6.95,6.98c2.66,0,4.82-1.38,5.9-3.41l1.38.82c-1.31,2.53-4.06,4.17-7.28,4.17-4.95,0-8.62-3.71-8.62-8.56"/>
+      <path fill="currentColor" d="m275.82,143.59c0-4.85,3.84-8.56,8.62-8.56s8.59,3.71,8.59,8.56-3.84,8.56-8.59,8.56-8.62-3.71-8.62-8.56m15.54,0c0-3.9-3.02-6.98-6.92-6.98s-6.95,3.08-6.95,6.98,3.05,6.98,6.95,6.98,6.92-3.08,6.92-6.98"/>
+      <path fill="currentColor" d="m312.49,141.59v10.2h-1.67v-10.2c0-3.02-1.74-4.98-4.82-4.98s-5.74,2.1-5.74,6.53v8.66h-1.64v-16.39h1.64v3.11c1.25-2.43,3.35-3.47,5.87-3.47,3.9,0,6.36,2.59,6.36,6.56"/>
+      <path fill="currentColor" d="m329.8,147.5c0,2.69-2.36,4.66-5.87,4.66-3.28,0-5.44-1.54-6.23-3.64l1.41-.82c.59,1.77,2.36,2.89,4.82,2.89,2.29,0,4.23-1.02,4.23-3.08,0-4.46-9.94-1.9-9.94-7.8,0-2.59,2.23-4.66,5.58-4.66,2.65,0,4.69,1.28,5.57,3.28l-1.38.79c-.69-1.7-2.39-2.49-4.2-2.49-2.13,0-3.94,1.11-3.94,3.08,0,4.39,9.94,1.8,9.94,7.8"/>
+      <path fill="currentColor" d="m350.4,143.66c0,.26-.03.53-.03.79h-14.86c.39,3.7,3.21,6.13,6.95,6.13,2.69,0,4.72-1.25,5.67-2.98l1.44.85c-1.35,2.23-3.9,3.71-7.15,3.71-5.05,0-8.62-3.61-8.62-8.56s3.48-8.56,8.49-8.56,8.1,4.13,8.1,8.62m-14.89-.82h13.18c-.36-4-3.18-6.23-6.39-6.23-3.74,0-6.46,2.59-6.79,6.23"/>
+      <path fill="currentColor" d="m355.38,130.12c0-.69.59-1.28,1.31-1.28s1.31.59,1.31,1.28-.59,1.31-1.31,1.31-1.31-.59-1.31-1.31m.49,5.28h1.64v16.39h-1.64v-16.39Z"/>
+      <rect fill="currentColor" x="364.21" y="127.85" width="1.64" height="23.94"/>
+      <path fill="currentColor" d="m372.04,150.64c0-.82.62-1.47,1.47-1.47s1.48.66,1.48,1.47-.66,1.48-1.48,1.48-1.47-.66-1.47-1.48"/>
+      <path fill="currentColor" d="m384.01,134.51v.88h4.89v1.61h-4.89v14.79h-1.67v-14.79h-2.82v-1.61h2.82v-.88c0-4.03,2.26-6.36,6.56-6.03v1.57c-3.35-.26-4.89,1.28-4.89,4.46"/>
+      <path fill="currentColor" d="m400.18,135.17v1.57c-2.82,0-5.48,1.74-5.48,5.94v9.12h-1.64v-16.4h1.64v3.21c1.12-2.59,3.25-3.44,5.48-3.44"/>
+      <path fill="currentColor" d="m167.64,36.53c-1.73,1.76-4.05,2.65-6.95,2.65s-5.2-.87-6.89-2.59c-1.69-1.73-2.53-4.08-2.53-7.07s.84-5.34,2.53-7.07c1.69-1.73,3.98-2.6,6.89-2.6s5.22.88,6.95,2.65c1.72,1.77,2.59,4.11,2.59,7.01s-.87,5.24-2.59,7.01m-14.96,9.72h15.9v58.92h-15.9v-58.92Z"/>
+      <path fill="currentColor" d="m217.24,89.01l5.06,11.43c-5.26,4.01-11.42,6.01-18.5,6.01-6.36,0-11.31-1.89-14.84-5.65-3.54-3.77-5.3-9.07-5.3-15.9v-27.57h-8.84v-11.08h8.84v-18.26h16.02v18.26h19.09v11.08h-19.09v26.16c0,3.14.81,5.38,2.42,6.72,1.61,1.33,3.52,2,5.71,2,3.06,0,6.2-1.06,9.42-3.18"/>
+      <path fill="currentColor" d="m262.95,44.71c6.05,0,10.78,1.67,14.2,5.01,3.42,3.34,5.12,8.12,5.12,14.32v41.12h-16.26v-37.36c0-3.38-.63-5.85-1.88-7.42-1.26-1.58-3.26-2.36-6.01-2.36-4.71,0-9.74,2.04-15.08,6.12v41.01h-16.49V21.03h16.49v30.51c6.52-4.56,13.16-6.83,19.91-6.83"/>
+      <path fill="currentColor" d="m320.45,93.73c6.2,0,12.13-2.08,17.79-6.24l6.48,10.37c-7.38,5.81-15.83,8.72-25.33,8.72s-16.22-2.81-21.56-8.42c-5.34-5.62-8.01-12.82-8.01-21.62s2.75-16.4,8.25-22.56c5.5-6.16,13-9.25,22.5-9.25,6.91,0,12.76,1.83,17.55,5.48,4.79,3.66,7.19,8.66,7.19,15.02,0,4.87-1.51,8.89-4.54,12.07-3.02,3.19-7.68,4.77-13.96,4.77h-21.91c1.65,7.78,6.83,11.67,15.55,11.67m0-36.88c-3.85,0-7.27,1.26-10.25,3.77-2.98,2.51-4.87,6.05-5.66,10.6h18.85c2.36,0,4.18-.59,5.48-1.76,1.3-1.18,1.94-2.76,1.94-4.72,0-2.19-.96-4.06-2.89-5.59-1.93-1.54-4.42-2.3-7.48-2.3m15.08-31.57l-22.27,16.25-6.72-7.78,19.91-19.32,9.07,10.85Z"/>
+      <path fill="currentColor" d="m376.29,44.71c7.93,0,14.26,2.14,18.97,6.43,4.71,4.28,7.07,10.3,7.07,18.08v35.94h-14.14v-7.67c-4.48,6.05-10.84,9.07-19.09,9.07-6.05,0-10.94-1.67-14.67-5.01-3.73-3.34-5.59-7.76-5.59-13.26,0-6.75,2.71-11.68,8.13-14.79,5.42-3.1,12.29-4.65,20.62-4.65,3.54,0,6.87.24,10.02.71v-.83c0-3.69-1.14-6.5-3.42-8.42-2.28-1.93-5.3-2.89-9.07-2.89-6.13,0-12.1,2.24-17.91,6.72l-6.83-10.01c6.67-6.28,15.32-9.43,25.92-9.43m-3.3,49.96c4.24,0,7.66-1.46,10.25-4.37,2.59-2.9,4.04-6.67,4.36-11.31-3.06-.24-6.01-.35-8.84-.35-9.35,0-14.02,2.86-14.02,8.6,0,2.2.74,3.99,2.24,5.36,1.49,1.37,3.49,2.07,6.01,2.07"/>
+      <path fill="currentColor" d="m78.27,156.51h-27.85c-1.34,0-2.43-1.09-2.43-2.43s1.09-2.43,2.43-2.43h27.85c1.34,0,2.43,1.09,2.43,2.43s-1.09,2.43-2.43,2.43"/>
+      <path fill="currentColor" d="m64.34,128.95C28.86,128.95,0,100.08,0,64.61S28.86.26,64.34.26s64.34,28.86,64.34,64.34-28.86,64.34-64.34,64.34m0-122.12c-31.86,0-57.78,25.92-57.78,57.77s25.92,57.78,57.78,57.78,57.77-25.92,57.77-57.78S96.2,6.83,64.34,6.83"/>
+      <g clip-path="url(#ithea-clip-2)">
+        <rect x="33.36" y="52.25" width="43.17" height="42.95" transform="translate(-14.5 13.46) rotate(-12.35)" fill="none" stroke="currentColor" stroke-miterlimit="10"/>
+      </g>
+      <polygon points="73.09 74.12 54.87 55.71 36.8 91.73 73.09 74.12" fill="none" stroke="currentColor" stroke-miterlimit="10"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- =================================================== -->
+<!-- ============== PAGE 1 — COUVERTURE ================ -->
+<!-- =================================================== -->
+<div class="page p1">
+  <div class="p1-top">
+    <div class="p1-top-tags">
+      <div class="p1-top-tag">Profils thématiques · Ithéa</div>
+      <div class="p1-top-edition">Édition préparée pour <span class="var">&lt;&lt;TER&gt;&gt;</span></div>
+    </div>
+    <h1 class="p1-display">Savoir<br/><strong>quoi dire</strong><br/>de son territoire.</h1>
+  </div>
+
+  <div class="p1-mid">
+    <div class="p1-card">
+      <div class="p1-card-tag">Vie locale · <span class="var">&lt;&lt;Mois&gt;&gt;</span></div>
+      <div class="p1-card-overlay"></div>
+      <svg class="p1-territoire" viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <pattern id="dots1" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse">
+            <circle cx="3" cy="3" r="0.7" fill="#759C60" opacity="0.6"/>
+          </pattern>
+          <pattern id="hatch1" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <line x1="0" y1="0" x2="0" y2="8" stroke="#f07322" stroke-width="2" opacity="0.45"/>
+          </pattern>
+        </defs>
+        <rect width="400" height="280" fill="white"/>
+        <path d="M 0 60 L 70 40 L 110 70 L 80 110 L 40 130 L 0 110 Z" fill="#EFDBD2" opacity="0.7"/>
+        <path d="M 290 30 L 400 20 L 400 90 L 320 100 L 280 70 Z" fill="#EFDBD2" opacity="0.7"/>
+        <path d="M 0 220 L 50 200 L 90 230 L 70 280 L 0 280 Z" fill="#EFDBD2" opacity="0.7"/>
+        <path d="M 320 220 L 400 210 L 400 280 L 290 280 L 280 250 Z" fill="#EFDBD2" opacity="0.7"/>
+        <path d="M 110 80 L 200 65 L 290 75 L 320 140 L 305 200 L 270 240 L 200 250 L 130 220 L 100 165 L 90 115 Z" fill="url(#dots1)" stroke="#00753b" stroke-width="2"/>
+        <path d="M 180 110 L 240 110 L 270 155 L 250 195 L 200 200 L 165 175 Z" fill="url(#hatch1)" stroke="#f07322" stroke-width="1" opacity="0.7"/>
+        <path d="M 130 20 L 210 20 L 230 60 L 200 70 L 130 60 Z" fill="#96bf9a" opacity="0.35" stroke="#00753b" stroke-width="0.7"/>
+        <path d="M 290 75 L 360 90 L 350 175 L 320 140 Z" fill="#96bf9a" opacity="0.35" stroke="#00753b" stroke-width="0.7"/>
+        <path d="M 270 240 L 360 230 L 380 280 L 270 280 Z" fill="#96bf9a" opacity="0.35" stroke="#00753b" stroke-width="0.7"/>
+        <path d="M 0 150 L 400 150" stroke="#231F20" stroke-width="0.5" opacity="0.15"/>
+        <path d="M 200 0 L 200 280" stroke="#231F20" stroke-width="0.5" opacity="0.15"/>
+        <path d="M 0 30 L 400 250" stroke="#231F20" stroke-width="0.4" opacity="0.1"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="p1-bot">
+    <p class="p1-baseline">Pour parler juste de votre territoire, chaque mois.</p>
+    <div class="p1-foot">
+      <p class="p1-amorce">Tournez la page&nbsp;: nous avons préparé pour <span class="var">&lt;&lt;TER&gt;&gt;</span> un aperçu réel de ce que serait votre prochain Profil thématique sur la <strong>Vie locale</strong>.</p>
+      <div class="p1-logo-wrap ithea-logo">
+        <svg viewBox="0 0 402.33 156.25"><use href="#ithea-logo"/></svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================================================== -->
+<!-- ============== PAGE 2 — ÉDITO + MANIFESTE ========= -->
+<!-- =================================================== -->
+<div class="page p2">
+  <div class="p2-headtag">Profils thématiques · Édition <span class="var">&lt;&lt;Mois Année&gt;&gt;</span></div>
+
+  <div class="p2-title-row">
+    <div class="p2-mark">édito</div>
+    <div class="p2-mark-line"></div>
+  </div>
+
+  <div class="p2-edito-text">
+    <p>Nous avons le plaisir de vous adresser une <strong>nouvelle façon d'utiliser nos Profils thématiques</strong>. Vous en connaissez peut-être déjà la matière — chiffres, cartes, comparaisons. Mais nous avons voulu, cette année, en repenser l'usage. Parce que dix ans à accompagner les collectivités nous l'ont appris&nbsp;: <em>vous n'avez pas besoin de plus de chiffres. Vous avez besoin de quelqu'un qui vous dise ce qu'ils signifient.</em></p>
+
+      <p>À partir de cette édition, chaque mois, vous recevez deux objets distincts. Une <strong>note de deux pages</strong>, signée par nos consultants, écrite pour celles et ceux qui doivent prendre la parole. Et un <strong>dossier de vingt-six pages</strong>, conçu pour vos services techniques. La note pour les décideurs. Le dossier pour les services. Au terme d'un cycle, votre territoire est lu, comparé, mis en perspective.</p>
+
+      <p>Les pages qui suivent sont un aperçu de ce que serait votre prochain Profil thématique pour <span class="var">&lt;&lt;TER&gt;&gt;</span>. Lisez-les comme s'il vous était destiné — il l'est. Très bonne lecture,</p>
+
+    <div class="p2-edito-sig">
+      <div class="p2-edito-photo">PZ</div>
+      <div class="p2-edito-sig-text">
+        <span class="p2-edito-sig-name">Pauline Zeiger</span> · <span class="p2-edito-sig-role">Responsable du pôle data — Ithéa</span><br/>
+        <span class="p2-edito-sig-contact">pauline.zeiger@ithea-conseil.fr · 07 56 92 95 53</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="p2-manifeste-h">L'idée en bref</div>
+
+  <h2 class="p2-titre">Le problème n'est plus la donnée. <em>C'est</em> <strong>ce qu'on en fait.</strong></h2>
+
+  <div class="p2-blocks">
+    <div class="p2-block">
+      <div class="p2-block-num">01</div>
+      <h3 class="p2-block-titre">Le constat</h3>
+      <p class="p2-block-corps">INSEE, CAF, ARS, observatoires — la donnée brute est partout, et gratuite. Ce qui manque aux DGS et aux élus, c'est <em>une lecture experte</em> qui transforme ces chiffres en récit défendable.</p>
+    </div>
+
+    <div class="p2-block">
+      <div class="p2-block-num">02</div>
+      <h3 class="p2-block-titre">La promesse</h3>
+      <p class="p2-block-corps">Chaque mois, l'une des 12 politiques publiques locales fait l'objet d'une livraison signée. <strong>Une note pour décider</strong>, <strong>un dossier pour étayer</strong>. La note pour les décideurs, le dossier pour les services.</p>
+    </div>
+
+    <div class="p2-block">
+      <div class="p2-block-num">03</div>
+      <h3 class="p2-block-titre">L'invitation</h3>
+      <p class="p2-block-corps">Les pages qui suivent ne sont pas un exemple générique. Nous avons préparé pour <span class="var">&lt;&lt;TER&gt;&gt;</span> un aperçu <strong>réel</strong> de votre prochain Profil thématique sur la <strong>Vie locale</strong>.</p>
+    </div>
+  </div>
+</div>
+
+<!-- =================================================== -->
+<!-- ============== PAGE 3 — NOTE RECTO ================ -->
+<!-- =================================================== -->
+<div class="page note">
+  <div class="note-bandeau">
+    <div class="note-bandeau-left">
+      <span class="note-bandeau-tag">Profils thématiques · Ithéa</span>
+      <span class="note-bandeau-thematique">Vie locale</span>
+    </div>
+    <span class="note-bandeau-meta"><span class="var">&lt;&lt;TER&gt;&gt;</span> · <span class="var">&lt;&lt;Mois Année&gt;&gt;</span> · n° <span class="var">&lt;&lt;XX&gt;&gt;</span></span>
+  </div>
+
+  <div class="note-content">
+    <div class="note-eyebrow">La note du mois</div>
+    <h1 class="note-titre"><strong>Vie locale&nbsp;:</strong> où en est votre territoire&nbsp;?</h1>
+
+    <p class="note-chapeau">
+      Avec 48 % de ménages composés d'une personne seule et 54 % des plus de 80 ans vivant seuls, <span class="var">&lt;&lt;TER&gt;&gt;</span> fait face à un défi d'isolement nettement plus marqué que la moyenne française. Le tissu associatif et la vitalité commerciale offrent pourtant des leviers d'action concrets — à condition d'être pensés ensemble.
+      <span class="note-chapeau-sig">— Pauline Zeiger, pour Ithéa</span>
+    </p>
+
+    <div class="note-grid">
+      <div class="note-viz">
+        <div class="note-viz-titre">Part des personnes vivant seules selon l'âge</div>
+        <div class="note-viz-source">Source : INSEE, 2022</div>
+
+        <svg viewBox="0 0 460 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
+          <line x1="40" y1="180" x2="460" y2="180" stroke="#231F20" stroke-width="0.5"/>
+          <line x1="40" y1="20" x2="40" y2="180" stroke="#231F20" stroke-width="0.5"/>
+          <text x="35" y="183" font-size="7" fill="#6E6E6E" text-anchor="end">0%</text>
+          <text x="35" y="143" font-size="7" fill="#6E6E6E" text-anchor="end">20%</text>
+          <text x="35" y="103" font-size="7" fill="#6E6E6E" text-anchor="end">40%</text>
+          <text x="35" y="63" font-size="7" fill="#6E6E6E" text-anchor="end">60%</text>
+          <line x1="40" y1="140" x2="460" y2="140" stroke="#D4D4D4" stroke-width="0.3" stroke-dasharray="2,2"/>
+          <line x1="40" y1="100" x2="460" y2="100" stroke="#D4D4D4" stroke-width="0.3" stroke-dasharray="2,2"/>
+          <line x1="40" y1="60" x2="460" y2="60" stroke="#D4D4D4" stroke-width="0.3" stroke-dasharray="2,2"/>
+
+          <g font-size="7" fill="#231F20" text-anchor="middle" font-weight="600">
+            <text x="80" y="195">15-24</text>
+            <text x="160" y="195">25-39</text>
+            <text x="240" y="195">40-64</text>
+            <text x="320" y="195">65-79</text>
+            <text x="400" y="195">80+</text>
+          </g>
+
+          <rect x="62" y="140" width="14" height="40" fill="#5c368d"/>
+          <rect x="142" y="130" width="14" height="50" fill="#5c368d"/>
+          <rect x="222" y="124" width="14" height="56" fill="#5c368d"/>
+          <rect x="302" y="103" width="14" height="77" fill="#5c368d"/>
+          <rect x="382" y="71" width="14" height="109" fill="#5c368d"/>
+
+          <rect x="80" y="153" width="14" height="27" fill="#C9C0C2"/>
+          <rect x="160" y="146" width="14" height="34" fill="#C9C0C2"/>
+          <rect x="240" y="142" width="14" height="38" fill="#C9C0C2"/>
+          <rect x="320" y="124" width="14" height="56" fill="#C9C0C2"/>
+          <rect x="400" y="96" width="14" height="84" fill="#C9C0C2"/>
+
+          <g font-size="7" fill="#5c368d" font-weight="700" text-anchor="middle">
+            <text x="69" y="135">20%</text>
+            <text x="149" y="125">25%</text>
+            <text x="229" y="119">28%</text>
+            <text x="309" y="98">39%</text>
+            <text x="389" y="66">54%</text>
+          </g>
+
+          <g font-size="7" fill="#231F20">
+            <rect x="290" y="5" width="9" height="6" fill="#5c368d"/>
+            <text x="303" y="11">&lt;&lt;TER&gt;&gt;</text>
+            <rect x="365" y="5" width="9" height="6" fill="#C9C0C2"/>
+            <text x="378" y="11">France métropolitaine</text>
+          </g>
+        </svg>
+
+        <div class="note-viz-legende">À chaque tranche d'âge, <span class="var">&lt;&lt;TER&gt;&gt;</span> dépasse de 6 à 12 points la moyenne française. L'écart se creuse avec l'âge — c'est sur les seniors que la priorité s'impose.</div>
+      </div>
+
+      <div class="note-chiffres">
+        <div class="note-chiffre">
+          <div class="note-chiffre-val">48 %</div>
+          <div class="note-chiffre-lab"><strong>des ménages</strong> sont composés d'une personne seule <em>(39 % en France)</em></div>
+        </div>
+        <div class="note-chiffre">
+          <div class="note-chiffre-val">54 %</div>
+          <div class="note-chiffre-lab"><strong>des 80 ans et +</strong> vivent seuls <em>(42 % en France)</em></div>
+        </div>
+        <div class="note-chiffre">
+          <div class="note-chiffre-val">341</div>
+          <div class="note-chiffre-lab"><strong>associations</strong> recensées : un actif territorial à mobiliser</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="note-retenir">
+      <div class="note-retenir-titre">Ce qu'il faut retenir</div>
+      <ul>
+        <li>L'isolement résidentiel touche <span class="var">&lt;&lt;TER&gt;&gt;</span> à tous les âges — pas seulement les seniors.</li>
+        <li>Le tissu associatif est dense (341 structures) mais vieillit : 46 % des associations ont plus de 25 ans.</li>
+        <li>Trois priorités d'action émergent : seniors isolés, jeunes adultes décrochés, animation associative à renouveler.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- =================================================== -->
+<!-- ============== PAGE 4 — NOTE VERSO ================ -->
+<!-- =================================================== -->
+<div class="page note">
+  <div class="note-content" style="padding-top:14mm;">
+    <section class="note-section">
+      <h2 class="note-section-h">Comment vous situer</h2>
+      <div class="note-comparatif">
+        <div>
+          <svg viewBox="0 0 380 140" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
+            <line x1="100" y1="120" x2="370" y2="120" stroke="#231F20" stroke-width="0.5"/>
+            <line x1="100" y1="20" x2="100" y2="120" stroke="#231F20" stroke-width="0.5"/>
+
+            <text x="100" y="135" font-size="7" fill="#6E6E6E" text-anchor="middle">0%</text>
+            <text x="167.5" y="135" font-size="7" fill="#6E6E6E" text-anchor="middle">20%</text>
+            <text x="235" y="135" font-size="7" fill="#6E6E6E" text-anchor="middle">40%</text>
+            <text x="302.5" y="135" font-size="7" fill="#6E6E6E" text-anchor="middle">60%</text>
+
+            <g font-size="8" fill="#231F20">
+              <text x="95" y="34" text-anchor="end" font-weight="700" fill="#5c368d">&lt;&lt;TER&gt;&gt;</text>
+              <rect x="100" y="25" width="162" height="14" fill="#5c368d"/>
+              <text x="270" y="35" font-size="8" fill="#231F20" font-weight="700">48 %</text>
+
+              <text x="95" y="58" text-anchor="end">CA &lt;&lt;EPCI&gt;&gt;</text>
+              <rect x="100" y="49" width="132" height="14" fill="#938dc1"/>
+              <text x="240" y="59" font-size="8" fill="#231F20">39 %</text>
+
+              <text x="95" y="82" text-anchor="end">Département</text>
+              <rect x="100" y="73" width="119" height="14" fill="#938dc1" opacity="0.7"/>
+              <text x="227" y="83" font-size="8" fill="#231F20">35 %</text>
+
+              <text x="95" y="106" text-anchor="end">Région</text>
+              <rect x="100" y="97" width="129" height="14" fill="#938dc1" opacity="0.55"/>
+              <text x="237" y="107" font-size="8" fill="#231F20">38 %</text>
+
+              <text x="95" y="118" text-anchor="end" fill="#6E6E6E" font-size="7">France métro.</text>
+              <line x1="232" y1="20" x2="232" y2="120" stroke="#231F20" stroke-width="1" stroke-dasharray="3,2"/>
+              <text x="240" y="20" font-size="7" fill="#6E6E6E" font-style="italic">Moyenne France 39 %</text>
+            </g>
+          </svg>
+        </div>
+        <div class="note-comparatif-text">
+          <strong>Sur l'isolement résidentiel, <span class="var">&lt;&lt;TER&gt;&gt;</span> est en décrochage net</strong> par rapport à son intercommunalité de rattachement et à la moyenne nationale.
+          <br/><br/>
+          L'écart de <strong>9 points avec la France</strong> et de <strong>9 points avec l'EPCI</strong> n'est pas conjoncturel : il s'inscrit dans une tendance à dix ans qui s'aggrave. C'est un marqueur structurel de la commune, à intégrer comme tel dans tout exercice de planification.
+        </div>
+      </div>
+    </section>
+
+    <section class="note-section">
+      <h2 class="note-section-h">Ce qui a évolué</h2>
+      <div class="note-evol">
+        <svg viewBox="0 0 700 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
+          <line x1="40" y1="100" x2="680" y2="100" stroke="#231F20" stroke-width="0.5"/>
+
+          <g font-size="8" fill="#6E6E6E" text-anchor="middle">
+            <text x="60" y="118">1968</text>
+            <text x="155" y="118">1975</text>
+            <text x="245" y="118">1982</text>
+            <text x="335" y="118">1990</text>
+            <text x="425" y="118">1999</text>
+            <text x="515" y="118">2011</text>
+            <text x="605" y="118">2016</text>
+            <text x="660" y="118">2022</text>
+          </g>
+
+          <polyline points="60,80 155,65 245,40 335,30 425,42 515,55 605,60 660,62" fill="none" stroke="#5c368d" stroke-width="2"/>
+
+          <g fill="#5c368d">
+            <circle cx="60" cy="80" r="3"/>
+            <circle cx="155" cy="65" r="3"/>
+            <circle cx="245" cy="40" r="3"/>
+            <circle cx="335" cy="30" r="4" stroke="#fff" stroke-width="1"/>
+            <circle cx="425" cy="42" r="3"/>
+            <circle cx="515" cy="55" r="3"/>
+            <circle cx="605" cy="60" r="3"/>
+            <circle cx="660" cy="62" r="3"/>
+          </g>
+
+          <g>
+            <line x1="335" y1="30" x2="335" y2="10" stroke="#231F20" stroke-width="0.4" stroke-dasharray="2,2"/>
+            <text x="335" y="8" font-size="8" fill="#231F20" text-anchor="middle" font-weight="700">Pic 1990 : 18 796 hab.</text>
+          </g>
+
+          <g font-size="7.5" fill="#231F20" text-anchor="middle">
+            <text x="60" y="73">11 085</text>
+            <text x="660" y="55">15 658</text>
+          </g>
+
+          <path d="M 335 30 L 660 62 L 660 100 L 335 100 Z" fill="#5c368d" opacity="0.06"/>
+        </svg>
+        <p class="note-evol-text"><span class="var">&lt;&lt;TER&gt;&gt;</span> a perdu 3 138 habitants depuis son pic de 1990, alors que l'intercommunalité de rattachement, elle, a continué de croître. Ce décrochage démographique est l'arrière-plan de tout le reste : il alimente l'isolement, fragilise le tissu commercial, pèse sur la vie associative.</p>
+      </div>
+    </section>
+
+    <section class="note-section">
+      <h2 class="note-section-h">À surveiller en <span class="var">&lt;&lt;Année+1&gt;&gt;</span></h2>
+      <div class="note-surveiller">
+        <div class="note-surv-grid">
+          <div class="note-surv-item">
+            <div class="note-surv-icon">1</div>
+            <div>
+              <div class="note-surv-titre">Élections municipales</div>
+              <div class="note-surv-text">Renouvellement attendu en mars — moment opportun pour cadrer le mandat sur des données partagées.</div>
+            </div>
+          </div>
+          <div class="note-surv-item">
+            <div class="note-surv-icon">2</div>
+            <div>
+              <div class="note-surv-titre">Trajectoire des crimes et délits</div>
+              <div class="note-surv-text">+ 16 % en cinq ans sur le territoire. À objectiver et à inscrire dans la stratégie sécurité de l'EPCI.</div>
+            </div>
+          </div>
+          <div class="note-surv-item">
+            <div class="note-surv-icon">3</div>
+            <div>
+              <div class="note-surv-titre">Renouvellement associatif</div>
+              <div class="note-surv-text">46 % des associations ont plus de 25 ans. Un risque de fragilité à anticiper sur les bénévoles dirigeants.</div>
+            </div>
+          </div>
+          <div class="note-surv-item">
+            <div class="note-surv-icon">4</div>
+            <div>
+              <div class="note-surv-titre">Prochain recensement INSEE</div>
+              <div class="note-surv-text">Millésime 2023 attendu fin <span class="var">&lt;&lt;Année+1&gt;&gt;</span> — il confirmera ou nuancera la trajectoire démographique.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="note-pied">
+    <div class="note-pied-photo">PZ</div>
+    <div class="note-pied-cta">
+      <strong>Pour aller plus loin</strong>
+      Consultez votre dossier détaillé Vie locale — 26 pages, livré chaque mois avec votre note.
+    </div>
+    <div class="note-pied-contact">
+      <strong>Pauline Zeiger</strong>
+      Responsable du pôle data<br/>
+      pauline.zeiger@ithea-conseil.fr<br/>
+      07 56 92 95 53
+    </div>
+  </div>
+</div>
+
+<!-- =================================================== -->
+<!-- ============== PAGE 5 — DOSSIER (1/2) ============== -->
+<!-- =================================================== -->
+<div class="page doss">
+  <div class="doss-bandeau">
+    <div class="doss-bandeau-left">Extrait du dossier détaillé · <strong>Vie locale</strong> · <span class="var">&lt;&lt;TER&gt;&gt;</span></div>
+    <div class="doss-bandeau-page">Indicateur 1/2 — Vie sociale & isolement</div>
+  </div>
+
+  <div class="doss-content">
+    <div class="doss-eyebrow">Approfondissement</div>
+    <h2 class="doss-titre"><strong>Personnes vivant seules</strong> :<br/>une lecture par âge, par quartier, dans la durée</h2>
+
+    <p class="doss-intro">L'isolement résidentiel est un indicateur composite, sensible à la structure démographique, au parc de logement et aux trajectoires familiales. Pour <span class="var">&lt;&lt;TER&gt;&gt;</span>, la lecture mérite d'être conduite à plusieurs échelles, sans s'arrêter au chiffre agrégé.</p>
+
+    <div class="doss-method">
+      <div class="doss-method-titre">Définition & sources</div>
+      <div class="doss-method-corps">Une <strong>personne vivant seule</strong> est, au sens de l'INSEE, une personne qui occupe seule une résidence principale (un seul adulte, sans enfant). Elle est distincte des « familles monoparentales » (un adulte avec enfant). Source primaire&nbsp;: <strong>INSEE, recensement de la population, millésime 2022</strong>. Pour les communes de plus de 10&nbsp;000 habitants, la donnée est lissée sur cinq ans (collecte 2020-2024).</div>
+    </div>
+
+    <div class="doss-keynumbers">
+      <div class="doss-key">
+        <div class="doss-key-val">48 %</div>
+        <div class="doss-key-lab">des ménages sont des personnes seules pour <span class="var">&lt;&lt;TER&gt;&gt;</span></div>
+      </div>
+      <div class="doss-key">
+        <div class="doss-key-val">+ 6 pts</div>
+        <div class="doss-key-lab">d'écart avec l'EPCI / + 9 pts avec la France métropolitaine</div>
+      </div>
+      <div class="doss-key">
+        <div class="doss-key-val">+ 4 pts</div>
+        <div class="doss-key-lab">d'augmentation entre 2016 et 2022 sur le territoire</div>
+      </div>
+    </div>
+
+    <div class="doss-row">
+      <div class="doss-card">
+        <div class="doss-card-titre">Lecture par tranche d'âge</div>
+        <div class="doss-card-source">Source : INSEE, 2022</div>
+        <table class="doss-table">
+          <thead>
+            <tr>
+              <th>Âge</th>
+              <th><span class="var">&lt;&lt;TER&gt;&gt;</span></th>
+              <th>EPCI</th>
+              <th>France</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>15–24 ans</td><td class="focus">20 %</td><td>11 %</td><td>14 %</td></tr>
+            <tr><td>25–39 ans</td><td class="focus">25 %</td><td>17 %</td><td>17 %</td></tr>
+            <tr><td>40–64 ans</td><td class="focus">28 %</td><td>18 %</td><td>19 %</td></tr>
+            <tr><td>65–79 ans</td><td class="focus">39 %</td><td>30 %</td><td>28 %</td></tr>
+            <tr><td>80 ans et +</td><td class="focus">54 %</td><td>43 %</td><td>42 %</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="doss-card">
+        <div class="doss-card-titre">Évolution sur dix ans</div>
+        <div class="doss-card-source">Source : INSEE, 2012-2022</div>
+        <svg viewBox="0 0 280 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
+          <line x1="30" y1="110" x2="270" y2="110" stroke="#231F20" stroke-width="0.5"/>
+          <line x1="30" y1="20" x2="30" y2="110" stroke="#231F20" stroke-width="0.5"/>
+
+          <line x1="30" y1="80" x2="270" y2="80" stroke="#D4D4D4" stroke-width="0.3" stroke-dasharray="2,2"/>
+          <line x1="30" y1="50" x2="270" y2="50" stroke="#D4D4D4" stroke-width="0.3" stroke-dasharray="2,2"/>
+
+          <text x="27" y="113" font-size="7" fill="#6E6E6E" text-anchor="end">35%</text>
+          <text x="27" y="83" font-size="7" fill="#6E6E6E" text-anchor="end">40%</text>
+          <text x="27" y="53" font-size="7" fill="#6E6E6E" text-anchor="end">45%</text>
+          <text x="27" y="23" font-size="7" fill="#6E6E6E" text-anchor="end">50%</text>
+
+          <g font-size="7" fill="#6E6E6E" text-anchor="middle">
+            <text x="55" y="124">2012</text>
+            <text x="115" y="124">2017</text>
+            <text x="180" y="124">2020</text>
+            <text x="245" y="124">2022</text>
+          </g>
+
+          <polyline points="55,68 115,55 180,38 245,32" fill="none" stroke="#5c368d" stroke-width="2"/>
+          <g fill="#5c368d">
+            <circle cx="55" cy="68" r="3"/>
+            <circle cx="115" cy="55" r="3"/>
+            <circle cx="180" cy="38" r="3"/>
+            <circle cx="245" cy="32" r="3"/>
+          </g>
+
+          <polyline points="55,80 115,75 180,72 245,68" fill="none" stroke="#C9C0C2" stroke-width="1.5" stroke-dasharray="3,2"/>
+
+          <g font-size="7">
+            <text x="245" y="28" fill="#5c368d" text-anchor="end" font-weight="700">&lt;&lt;TER&gt;&gt; · 48 %</text>
+            <text x="245" y="64" fill="#6E6E6E" text-anchor="end">France · 39 %</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="doss-encart">
+      <div class="doss-encart-titre">Le zoom Ithéa</div>
+      <div class="doss-encart-corps">L'isolement résidentiel n'est pas qu'un fait démographique : c'est un déterminant majeur de la santé <em>(BEH 2023, Santé Publique France)</em>, de la précarité énergétique et du recours aux services publics. Pour <span class="var">&lt;&lt;TER&gt;&gt;</span>, il croise trois autres dimensions visibles dans les autres Profils thématiques&nbsp;: la précarité monétaire, l'accessibilité de l'offre de soins et le vieillissement. Lus ensemble, ces quatre indicateurs constituent un noyau dur de pilotage des politiques sociales locales.</div>
+    </div>
+  </div>
+
+  <div class="doss-pied">
+    <div>Profils thématiques · <strong>Vie locale · <span class="var">&lt;&lt;TER&gt;&gt;</span></strong></div>
+    <div>Page 5</div>
+  </div>
+</div>
+
+<!-- =================================================== -->
+<!-- ============== PAGE 6 — DOSSIER (2/2) ============== -->
+<!-- =================================================== -->
+<div class="page doss">
+  <div class="doss-bandeau">
+    <div class="doss-bandeau-left">Extrait du dossier détaillé · <strong>Vie locale</strong> · <span class="var">&lt;&lt;TER&gt;&gt;</span></div>
+    <div class="doss-bandeau-page">Indicateur 2/2 — Lecture cartographique</div>
+  </div>
+
+  <div class="doss-content">
+    <div class="doss-eyebrow">Approfondissement</div>
+    <h2 class="doss-titre"><strong>L'isolement à l'échelle intercommunale</strong> :<br/>où se concentrent les fragilités&nbsp;?</h2>
+
+    <p class="doss-intro">Lue à l'échelle de la commune, la part des personnes vivant seules masque des disparités très fortes <em>au sein</em> de l'EPCI. La cartographie ci-dessous situe <span class="var">&lt;&lt;TER&gt;&gt;</span> dans son ensemble intercommunal et identifie les communes voisines qui partagent ses caractéristiques.</p>
+
+    <div class="doss-carte">
+      <div class="doss-carte-svg">
+        <svg viewBox="0 0 480 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+          <path d="M 60 100 L 130 60 L 220 50 L 320 70 L 400 100 L 430 180 L 410 260 L 350 290 L 250 310 L 150 290 L 80 240 L 50 170 Z"
+            fill="#FAFAF8" stroke="#231F20" stroke-width="1.5"/>
+
+          <path d="M 220 130 L 270 130 L 290 165 L 270 195 L 220 195 L 200 165 Z" fill="#5c368d" stroke="white" stroke-width="1"/>
+          <path d="M 180 200 L 220 195 L 230 230 L 200 250 L 170 240 Z" fill="#5c368d" stroke="white" stroke-width="1"/>
+
+          <path d="M 270 130 L 320 130 L 330 160 L 290 165 Z" fill="#7c5fa3" stroke="white" stroke-width="1"/>
+          <path d="M 270 195 L 290 165 L 330 160 L 350 200 L 310 220 Z" fill="#7c5fa3" stroke="white" stroke-width="1"/>
+          <path d="M 230 230 L 270 220 L 280 255 L 240 270 Z" fill="#7c5fa3" stroke="white" stroke-width="1"/>
+
+          <path d="M 130 100 L 180 100 L 200 140 L 170 170 L 130 160 Z" fill="#a791c1" stroke="white" stroke-width="1"/>
+          <path d="M 320 100 L 380 100 L 390 140 L 340 145 Z" fill="#a791c1" stroke="white" stroke-width="1"/>
+          <path d="M 350 200 L 390 195 L 405 235 L 370 250 L 320 235 L 310 220 Z" fill="#a791c1" stroke="white" stroke-width="1"/>
+
+          <path d="M 80 130 L 130 100 L 130 160 L 100 175 Z" fill="#d4c8e0" stroke="white" stroke-width="1"/>
+          <path d="M 100 175 L 130 160 L 170 170 L 180 200 L 170 240 L 130 235 L 90 210 Z" fill="#d4c8e0" stroke="white" stroke-width="1"/>
+          <path d="M 220 195 L 180 200 L 170 170 L 200 165 Z" fill="#d4c8e0" stroke="white" stroke-width="1"/>
+          <path d="M 380 100 L 410 130 L 415 170 L 390 195 L 390 140 Z" fill="#d4c8e0" stroke="white" stroke-width="1"/>
+          <path d="M 130 235 L 170 240 L 200 250 L 230 260 L 220 290 L 170 285 Z" fill="#d4c8e0" stroke="white" stroke-width="1"/>
+          <path d="M 280 255 L 320 235 L 370 250 L 360 285 L 310 295 L 270 280 Z" fill="#d4c8e0" stroke="white" stroke-width="1"/>
+          <path d="M 130 100 L 220 60 L 270 80 L 250 110 L 200 105 Z" fill="#d4c8e0" stroke="white" stroke-width="1"/>
+          <path d="M 250 110 L 270 80 L 320 80 L 340 110 L 320 130 L 270 130 Z" fill="#d4c8e0" stroke="white" stroke-width="1"/>
+
+          <circle cx="245" cy="165" r="11" fill="#231F20" stroke="white" stroke-width="3"/>
+          <text x="245" y="169" font-size="11" font-family="'Josefin Sans',sans-serif" font-weight="700" fill="white" text-anchor="middle">★</text>
+
+          <line x1="245" y1="155" x2="280" y2="40" stroke="#231F20" stroke-width="0.6"/>
+          <text x="280" y="35" font-size="10" font-family="'Josefin Sans',sans-serif" font-weight="600" fill="#231F20">&lt;&lt;TER&gt;&gt;</text>
+          <text x="280" y="48" font-size="8" fill="#6E6E6E">48 % · au-dessus de tout l'EPCI</text>
+
+          <text x="430" y="100" font-size="8" font-weight="700" fill="#231F20" text-anchor="end">CA &lt;&lt;EPCI&gt;&gt;</text>
+        </svg>
+      </div>
+
+      <div class="doss-legende">
+        <div class="doss-leg-item"><div class="doss-leg-color" style="background:#d4c8e0"></div>Moins de 12 %</div>
+        <div class="doss-leg-item"><div class="doss-leg-color" style="background:#a791c1"></div>12 % à 14 %</div>
+        <div class="doss-leg-item"><div class="doss-leg-color" style="background:#7c5fa3"></div>14 % à 16 %</div>
+        <div class="doss-leg-item"><div class="doss-leg-color" style="background:#5c368d"></div>Plus de 16 %</div>
+        <div class="doss-leg-item"><div class="doss-leg-color" style="background:#FAFAF8;border:1px solid #6E6E6E"></div>Données ND</div>
+      </div>
+    </div>
+
+    <div class="doss-row" style="margin-bottom:5mm;">
+      <div class="doss-method" style="margin-bottom:0;">
+        <div class="doss-method-titre">Précautions de lecture</div>
+        <div class="doss-method-corps">La cartographie est lissée à l'échelle communale. Pour <span class="var">&lt;&lt;TER&gt;&gt;</span>, des disparités infra-communales existent — notamment sur le secteur <span class="var">&lt;&lt;quartier&gt;&gt;</span>, où la part des personnes vivant seules atteint 56 %. Le <strong>Profil Quartier</strong>, livré gratuitement avec l'abonnement, permet de descendre à cette échelle.</div>
+      </div>
+      <div class="doss-method" style="margin-bottom:0;">
+        <div class="doss-method-titre">Comparaison régionale</div>
+        <div class="doss-method-corps"><span class="var">&lt;&lt;TER&gt;&gt;</span> partage son profil avec un groupe de 23 communes de la région, identifiées par <strong>typologie statistique INSEE</strong>. Ces villes-pivots de couronne urbaine présentent toutes la combinaison « parc social ancien + vieillissement + isolement » qui structure les politiques locales actuelles.</div>
+      </div>
+    </div>
+
+    <div class="doss-encart">
+      <div class="doss-encart-titre">Pour aller plus loin</div>
+      <div class="doss-encart-corps">Cet indicateur trouve son prolongement dans <strong>quatre autres Profils thématiques</strong> de votre abonnement&nbsp;: <em>Seniors</em> (taux d'aidants, accès aux soins), <em>Précarité</em> (RSA, foyers non imposés), <em>Logement</em> (taille des logements, vacance), <em>Santé-handicap</em> (offre de soins, médecins traitants). Une lecture croisée vous est proposée chaque année dans la note de synthèse annuelle, livrée en décembre.</div>
+    </div>
+  </div>
+
+  <div class="doss-pied">
+    <div>Profils thématiques · <strong>Vie locale · <span class="var">&lt;&lt;TER&gt;&gt;</span></strong></div>
+    <div>Page 6</div>
+  </div>
+</div>
+
+<!-- =================================================== -->
+<!-- ============== PAGE 7 — ABONNEMENT COMPLET ========= -->
+<!-- =================================================== -->
+<div class="page p7">
+  <h2 class="p7-titre">Votre abonnement <strong>aux Profils thématiques.</strong></h2>
+  <p class="p7-soustitre">Au-delà du livrable, c'est un service que vous achetez : une lecture continue de <span class="var">&lt;&lt;TER&gt;&gt;</span> par les consultants Ithéa, et un interlocuteur dédié dans la durée.</p>
+
+  <div class="p7-actifs">
+    <div class="p7-actifs-h">Ce qui change quand vous vous <strong>abonnez</strong></div>
+    <div class="p7-actifs-grid">
+      <div class="p7-actif">
+        <div class="p7-actif-icon">i</div>
+        <div class="p7-actif-titre">Un partenaire qui veille</div>
+        <div class="p7-actif-text">Un consultant qui suit votre territoire dans la durée, repère ce qui change, anticipe les inflexions.</div>
+      </div>
+      <div class="p7-actif">
+        <div class="p7-actif-icon">ii</div>
+        <div class="p7-actif-titre">Un rythme</div>
+        <div class="p7-actif-text">Chaque mois, un livrable qui structure l'année et nourrit vos temps forts (ROB, projet de territoire).</div>
+      </div>
+      <div class="p7-actif">
+        <div class="p7-actif-icon">iii</div>
+        <div class="p7-actif-titre">Une mémoire</div>
+        <div class="p7-actif-text">Ithéa connaît votre territoire, vos comparables, vos évolutions. Un actif relationnel, non remplaçable.</div>
+      </div>
+      <div class="p7-actif">
+        <div class="p7-actif-icon">iv</div>
+        <div class="p7-actif-titre">Un interlocuteur</div>
+        <div class="p7-actif-text">Pauline Zeiger, et derrière elle l'équipe d'Ithéa. Quelqu'un qui sait ce qu'attendent les élus.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p7-themes">
+    <div class="p7-section-h">Sur 12 thématiques disponibles pour <span class="var">&lt;&lt;TER&gt;&gt;</span></div>
+    <div class="p7-themes-grid">
+      <div class="p7-theme">Petite enfance</div>
+      <div class="p7-theme">Enfance-Familles</div>
+      <div class="p7-theme">Jeunesse</div>
+      <div class="p7-theme">Seniors</div>
+      <div class="p7-theme">Logement</div>
+      <div class="p7-theme">Économie-emploi</div>
+      <div class="p7-theme">Santé-handicap</div>
+      <div class="p7-theme">Sports</div>
+      <div class="p7-theme featured">Vie locale ★</div>
+      <div class="p7-theme">Environnement</div>
+      <div class="p7-theme">Précarité</div>
+      <div class="p7-theme">Finances locales</div>
+    </div>
+  </div>
+
+  <div class="p7-formules">
+    <div class="p7-formule">
+      <div class="p7-formule-h">Achat unique</div>
+      <div class="p7-formule-sub">Pour un besoin ponctuel</div>
+      <div class="p7-formule-prix">à partir de 100 €<span> HT / profil</span></div>
+      <ul>
+        <li>Profils de votre choix (1 à 11)</li>
+        <li>Envoi sous 7 jours</li>
+        <li>Formats PPT, PDF et Excel</li>
+        <li>Choix des territoires de comparaison</li>
+      </ul>
+    </div>
+    <div class="p7-formule high">
+      <div class="p7-formule-tag">Le plus avantageux</div>
+      <div class="p7-formule-h">Abonnement annuel</div>
+      <div class="p7-formule-sub">Pour une lecture continue de votre territoire</div>
+      <div class="p7-formule-prix">à partir de 300 €<span> HT / an</span></div>
+      <ul>
+        <li>Les 12 Profils, livrés à un mois d'intervalle</li>
+        <li>Une note signée + un dossier détaillé chaque mois</li>
+        <li>Formats PPT, PDF et Excel · Profil Quartier et QPV inclus</li>
+        <li>Accompagnement par Pauline Zeiger</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="p7-apropos">
+    <div class="p7-apropos-text">
+      <strong>À propos d'Ithéa</strong>
+      Bureau d'études dédié aux collectivités, expert des politiques sociales et éducatives, présent dans <strong style="color:var(--ink);text-transform:none;letter-spacing:0;font-size:8pt;display:inline;margin:0;">six antennes</strong> : Boulogne-sur-Mer · Paris · Tours · Clermont-Ferrand · Grenoble · Montpellier.
+    </div>
+    <div class="p7-apropos-stats">
+      <div class="p7-apropos-stat">
+        <div class="p7-apropos-stat-val">+ 2 000</div>
+        <div class="p7-apropos-stat-lab">collectivités</div>
+      </div>
+      <div class="p7-apropos-stat">
+        <div class="p7-apropos-stat-val">12</div>
+        <div class="p7-apropos-stat-lab">politiques</div>
+      </div>
+      <div class="p7-apropos-stat">
+        <div class="p7-apropos-stat-val">10 ans</div>
+        <div class="p7-apropos-stat-lab">d'expertise</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================================================== -->
+<!-- ============== PAGE 8 — BON DE COMMANDE ============ -->
+<!-- =================================================== -->
+<div class="page p8">
+  <div class="p8-bandeau">
+    <div class="p8-bandeau-titre">Bon de <strong>commande</strong></div>
+    <div class="p8-bandeau-ter"><span class="var">&lt;&lt;TER&gt;&gt;</span></div>
+  </div>
+
+  <div class="p8-content">
+    <div class="p8-block">
+      <div class="p8-block-h">Vos coordonnées</div>
+      <div class="p8-fields">
+        <div>
+          <div class="p8-field" style="margin-bottom:3mm;"><em>Raison sociale</em></div>
+          <div class="p8-field" style="margin-bottom:3mm;"><em>SIRET</em></div>
+          <div class="p8-field"><em>Nom & prénom du contact</em></div>
+        </div>
+        <div>
+          <div class="p8-field" style="margin-bottom:3mm;"><em>Adresse e-mail</em></div>
+          <div class="p8-field" style="margin-bottom:3mm;"><em>Téléphone</em></div>
+          <div class="p8-field"><em>N° de commande (facultatif)</em></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="p8-block">
+      <div class="p8-block-h">Option 1 · Achat à la thématique</div>
+      <div class="p8-themes-grid">
+        <div class="p8-theme-item"><div class="p8-checkbox"></div>Petite enfance</div>
+        <div class="p8-theme-item"><div class="p8-checkbox"></div>Santé-handicap</div>
+        <div class="p8-theme-item"><div class="p8-checkbox"></div>Logement</div>
+        <div class="p8-theme-item"><div class="p8-checkbox"></div>Précarité</div>
+        <div class="p8-theme-item"><div class="p8-checkbox"></div>Enfance-Familles</div>
+        <div class="p8-theme-item"><div class="p8-checkbox"></div>Sports</div>
+        <div class="p8-theme-item"><div class="p8-checkbox"></div>Vie locale</div>
+        <div class="p8-theme-item"><div class="p8-checkbox"></div>Finances locales</div>
+        <div class="p8-theme-item"><div class="p8-checkbox"></div>Jeunesse</div>
+        <div class="p8-theme-item"><div class="p8-checkbox"></div>Seniors</div>
+        <div class="p8-theme-item"><div class="p8-checkbox"></div>Environnement</div>
+        <div class="p8-theme-item"><div class="p8-checkbox"></div>Économie-emploi</div>
+      </div>
+      <div class="p8-totaux">
+        <div class="head">Nombre de profils × 100 € HT</div>
+        <div class="head">Total HT</div>
+        <div class="head">Total TTC (20 %)</div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <div class="p8-block">
+      <div class="p8-block-h">Option 2 · Abonnement aux 12 thématiques</div>
+      <div class="p8-totaux">
+        <div class="head">Tarification : 300 € HT (avantageux dès 4 thématiques)</div>
+        <div class="head">Total HT</div>
+        <div class="head">Total TTC (20 %)</div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <div class="p8-block">
+      <div class="p8-block-h">Vos territoires de comparaison</div>
+      <table class="p8-compare-table">
+        <tr><td>Territoire 1</td><td><span class="var">&lt;&lt;TER&gt;&gt;</span></td><td style="font-style:italic;color:var(--ink-light);">— pré-rempli</td></tr>
+        <tr><td>Territoire 2</td><td><span class="var">&lt;&lt;EPCI&gt;&gt;</span></td><td style="font-style:italic;color:var(--ink-light);">— pré-rempli, modifiable</td></tr>
+        <tr><td>Territoire 3</td><td><span class="var">&lt;&lt;Département&gt;&gt;</span></td><td style="font-style:italic;color:var(--ink-light);">— pré-rempli, modifiable</td></tr>
+        <tr><td>Territoire 4</td><td><span class="var">&lt;&lt;Région&gt;&gt;</span></td><td style="font-style:italic;color:var(--ink-light);">— pré-rempli, modifiable</td></tr>
+        <tr><td>Territoire 5</td><td>France métropolitaine</td><td style="font-style:italic;color:var(--ink-light);">— pré-rempli</td></tr>
+      </table>
+    </div>
+
+    <div class="p8-paiement">
+      <div class="p8-paiement-text">
+        <strong>Paiement & validation</strong>
+        À retourner scanné par mail à <em>communication@ithea-conseil.fr</em>.
+        Paiement par mandat administratif à réception de facture, à l'ordre d'Ithéa Conseil SAS.<br/>
+        IBAN FR76 1680 6044 0066 07 96 40 92 292 / BIC AGRIFRPP868
+      </div>
+      <div class="p8-signature">Date, cachet et signature précédés de la mention manuscrite « Lu et approuvé, bon pour accord ».</div>
+    </div>
+  </div>
+</div>
+
+<!-- =================================================== -->
+<!-- ============== PAGE 9 — 4ème de couv ============== -->
+<!-- =================================================== -->
+<div class="page p9">
+  <div class="p9-tag">Profils thématiques · Édition <span class="var">&lt;&lt;Mois Année&gt;&gt;</span></div>
+
+  <div class="p9-content">
+    <div class="p9-display">Savoir<br/><strong>quoi dire</strong><br/>de son territoire.</div>
+    <div class="p9-baseline">Pour parler juste de votre territoire, chaque mois.</div>
+
+    <div class="p9-cta">
+      <div class="p9-cta-text">
+        <strong>Prendre rendez-vous</strong>
+        Pauline Zeiger échange avec vous pour définir les thématiques les plus pertinentes pour votre collectivité.
+      </div>
+      <div class="p9-qr">
+        <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+          <rect width="60" height="60" fill="white"/>
+          <g fill="#231F20">
+            <rect x="4" y="4" width="14" height="14"/>
+            <rect x="42" y="4" width="14" height="14"/>
+            <rect x="4" y="42" width="14" height="14"/>
+            <rect x="8" y="8" width="6" height="6" fill="white"/>
+            <rect x="46" y="8" width="6" height="6" fill="white"/>
+            <rect x="8" y="46" width="6" height="6" fill="white"/>
+            <rect x="22" y="6" width="3" height="3"/>
+            <rect x="28" y="6" width="3" height="3"/>
+            <rect x="34" y="10" width="3" height="3"/>
+            <rect x="22" y="14" width="3" height="3"/>
+            <rect x="34" y="20" width="3" height="3"/>
+            <rect x="6" y="24" width="3" height="3"/>
+            <rect x="14" y="24" width="3" height="3"/>
+            <rect x="22" y="22" width="3" height="3"/>
+            <rect x="30" y="26" width="3" height="3"/>
+            <rect x="42" y="22" width="3" height="3"/>
+            <rect x="50" y="24" width="3" height="3"/>
+            <rect x="6" y="32" width="3" height="3"/>
+            <rect x="18" y="30" width="3" height="3"/>
+            <rect x="26" y="34" width="3" height="3"/>
+            <rect x="38" y="32" width="3" height="3"/>
+            <rect x="46" y="30" width="3" height="3"/>
+            <rect x="54" y="34" width="3" height="3"/>
+            <rect x="22" y="42" width="3" height="3"/>
+            <rect x="30" y="44" width="3" height="3"/>
+            <rect x="38" y="42" width="3" height="3"/>
+            <rect x="42" y="48" width="3" height="3"/>
+            <rect x="50" y="46" width="3" height="3"/>
+            <rect x="26" y="50" width="3" height="3"/>
+            <rect x="34" y="52" width="3" height="3"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="p9-bot">
+    <div class="p9-coords">
+      <strong>Ithéa Conseil SAS</strong>
+      21 rue du Faubourg Saint-Antoine, 75011 Paris<br/>
+      communication@ithea-conseil.fr · 01 40 19 07 61<br/>
+      ithea-conseil.fr
+    </div>
+    <div class="p9-logo-wrap ithea-logo">
+      <svg viewBox="0 0 402.33 156.25"><use href="#ithea-logo"/></svg>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
